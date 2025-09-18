@@ -1,7 +1,7 @@
 const STRING_MAX_LENGTH = 20;
 
 function isStringValid(str) {
-  if(!str.length) {
+  if(!str || !str.length) {
     return false;
   }
 
@@ -9,7 +9,7 @@ function isStringValid(str) {
 }
 
 function isPalindromSimple(str) {
-  if(!str.length) {
+  if(!str || !str.length) {
     return false;
   }
 
@@ -18,11 +18,10 @@ function isPalindromSimple(str) {
 }
 
 function isPalindromHard(str) {
-  if(!str.length) {
+  if(!str || !str.length) {
     return false;
   }
 
   const joinedStr = str.toLowerCase().replaceAll(' ', '');
   return joinedStr === joinedStr.split('').reverse().join('');
 }
-
