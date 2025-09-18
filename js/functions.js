@@ -1,11 +1,9 @@
-const STRING_MAX_LENGTH = 20;
-
-function isStringValid(str) {
-  if(!str || !str.length) {
+function isStringValid(str, maxLength) {
+  if(!str || !str.length || maxLength < 1) {
     return false;
   }
 
-  return str.length <= STRING_MAX_LENGTH;
+  return str.length <= maxLength;
 }
 
 function isPalindromSimple(str) {
@@ -25,3 +23,7 @@ function isPalindromHard(str) {
   const joinedStr = str.toLowerCase().replaceAll(' ', '');
   return joinedStr === joinedStr.split('').reverse().join('');
 }
+
+isStringValid('проверяемая строка', 20);
+isPalindromSimple('топот');
+isPalindromHard('Лёша на полке клопа нашёл ');
