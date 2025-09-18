@@ -24,6 +24,31 @@ function isPalindromHard(str) {
   return joinedStr === joinedStr.split('').reverse().join('');
 }
 
+function extractNum(num) {
+  if (!num) {
+    return NaN;
+  }
+
+  const filteredNums = [];
+
+  const nums = num.toString().replaceAll(' ', '').split('');
+
+  for (let i = 0; i <= nums.length; i++) {
+    if(isNaN(nums[i])) {
+      continue;
+    }
+
+    filteredNums.push(nums[i]);
+  }
+
+  if (!filteredNums.length) {
+    return NaN;
+  }
+
+  return parseInt(filteredNums.join(''), 10);
+}
+
 isStringValid('проверяемая строка', 20);
 isPalindromSimple('топот');
 isPalindromHard('Лёша на полке клопа нашёл ');
+extractNum('2023 год');
